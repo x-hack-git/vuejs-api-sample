@@ -9,9 +9,7 @@
     <div id="app"> 
     <p>
       <ul>
-        <li> {{ todos[0] }} </li>
-        <li> {{ todos[1] }} </li>
-        <li> {{ todos[2] }} </li>
+        <li v-for="todo in todos"> {{ todo }} </li>
       </ul>
     </p>
     </div>

@@ -6,8 +6,10 @@
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    hello
-    <div id="app"> {{ name }} </div>
+    <div id="app"> 
+    <p>hello {{ name.toUpperCase() }} </p>
+    <p><input type="text" v-model="name"/></p>
+    </div>
   <script src="https://cdn.jsdelivr.net/npm/vue"></script>
   <script src="js/main.js"></script>
 </body>

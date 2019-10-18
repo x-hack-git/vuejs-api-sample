@@ -4,7 +4,7 @@
   var vm = new Vue({
       el: "#app",
       data: {
-        name: 'マツダ'
+        name: 'matsuda'
       }
   })
 })();

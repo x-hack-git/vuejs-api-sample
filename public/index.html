@@ -7,12 +7,18 @@
 </head>
 <body>
   <div id="app" class="container"> 
-    <h1>My Todos</h1>
+    <h1>
+      <button @click="purge">purge</button>
+      My Todos
+      <span class="info">({{ remaining }}/{{ todos.length }})</span>
+    </h1>
     <ul>
-      <li v-for="(todo, index) in todos"> 
-        {{ todo }} 
-        <span @click="deleteItem(index)">[x]</span>
+      <li v-for="(todo, index) in todos">
+        <input type="checkbox" v-model="todo.isDone">
+        <span :class="{done: todo.isDone}">{{ todo.title }}</span> 
+        <span @click="deleteItem(index)" class="command">[x]</span>
       </li>
+      <li v-show="!todos.length">Nothing to do, yay!</li>
     </ul>
     <form @submit.prevent="addItem">
       <input type="text" v-model="newItem">
